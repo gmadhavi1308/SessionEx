@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<body>
+<table align="center" border="1">
+<caption><strong>Result View</strong></caption>
+<tr>
+<td>{%if request.session %}
+    <h1>Thanks for submitting...</h1>
+    <table border="1"><tr>
+    {%for key,value in request.session.items %}
+    <td>{{key|upper}}</td>{%endfor%}</tr><tr>
+    {%for key,value in request.session.items %}<td> {{value|title}}</td>
+    {%endfor%}</tr>
+    <table>
+    {%else%}
+    <p>No Information available</p>
+    {%endif%}</td>
+</tr>
+</form>
+</table>
+</body>
+</html>
